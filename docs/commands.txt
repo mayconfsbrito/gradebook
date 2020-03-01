@@ -11,4 +11,9 @@ $ dotnet run --project src\GradeBook
 $ dotnet run -- Maycon
 
 # Dotnet run running structure
-# dotnet run (restore > build > dotnet XXX.dll)
+$ dotnet run (restore > build > dotnet XXX.dll)
+
+# Adding nuget references 
+$ dotnet add package PACKAGE_NAME
+$ dotnet add reference PROJECT_NAME
+$ dotnet add reference ..\..\src\GradeBook\Gradebook.csproj
