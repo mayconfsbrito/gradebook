@@ -1,0 +1,8 @@
+# Para criação de um novo projeto dotnet core (sem o terceiro parâmetro - template -  apenas lista as opções de criação de projetos)
+$ dotnet new 
+
+# Abre o visual studio a partir do diretório atual (.)
+$ code .
+
+# Executa um projeto dentro de um sub diretório (ex: GradeBook)
+$ dotnet run --project src\GradeBook
