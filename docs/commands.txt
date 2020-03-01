@@ -17,3 +17,8 @@ $ dotnet run (restore > build > dotnet XXX.dll)
 $ dotnet add package PACKAGE_NAME
 $ dotnet add reference PROJECT_NAME
 $ dotnet add reference ..\..\src\GradeBook\Gradebook.csproj
+
+# Solution
+$ dotnet new sln
+$ dotnet sln add PROJECT_NAME
+# dotnet sln add src\GradeBook\GradeBook.csproj
