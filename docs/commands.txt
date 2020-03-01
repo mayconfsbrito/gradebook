@@ -1,8 +1,14 @@
-# Para criação de um novo projeto dotnet core (sem o terceiro parâmetro - template -  apenas lista as opções de criação de projetos)
+# Create a new dotnet core project (without the third parameter - template - just show the options to create projects)
 $ dotnet new 
 
-# Abre o visual studio a partir do diretório atual (.)
+# Opens the VS Code from the present directory
 $ code .
 
-# Executa um projeto dentro de um sub diretório (ex: GradeBook)
+# Runs the project in this subdirectory (ex: GradeBook)
 $ dotnet run --project src\GradeBook
+
+# Passing parameter (Maycon) to the application
+$ dotnet run -- Maycon
+
+# Dotnet run running structure
+# dotnet run (restore > build > dotnet XXX.dll)
