@@ -2,11 +2,18 @@
 
 namespace GradeBook
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+      if (args.Length > 0)
+      {
+        Console.WriteLine($"Hello, {args[0]}!");
+      }
+      else
+      {
+        Console.WriteLine("Hello!");
+      }
     }
+  }
 }
