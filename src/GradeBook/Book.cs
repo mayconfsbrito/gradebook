@@ -7,11 +7,11 @@ namespace GradeBook
     {
         List<double> grades = new List<double>();
 
-        string name;
+        public string Name;
 
         public Book(string name)
         {
-            this.name = name;
+            Name = name;
         }
 
         public void AddGrade(double grade)
