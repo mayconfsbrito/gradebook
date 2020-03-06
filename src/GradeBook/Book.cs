@@ -3,15 +3,60 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
     public class Book
     {
         List<double> grades = new List<double>();
 
-        public string Name;
+        public event GradeAddedDelegate GradeAdded;
+
+        private string name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                    name = value;
+                else
+                    throw new ArgumentException($"{nameof(Name)} can't be empty!");
+            }
+        }
 
         public Book(string name)
         {
             Name = name;
+        }
+
+        public void AddGrade(char letter)
+        {
+            switch (letter)
+            {
+                case 'A':
+                    AddGrade(90);
+                    break;
+
+                case 'B':
+                    AddGrade(80);
+                    break;
+
+                case 'C':
+                    AddGrade(70);
+                    break;
+
+                case 'D':
+                    AddGrade(60);
+                    break;
+
+                default:
+                    AddGrade(0);
+                    break;
+            }
         }
 
         public void AddGrade(double grade)
@@ -19,12 +64,15 @@ namespace GradeBook
             if (grade <= 100 && grade >= 0)
             {
                 grades.Add(grade);
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
-                Console.WriteLine("Invalid value");
+                throw new ArgumentException($"Invalid {nameof(grade)} {grade}");
             }
-
         }
 
         public Statistics GetStatistics()
